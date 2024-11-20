@@ -9,9 +9,9 @@ import TokenSale from "./TokenSale.json";
 
 
 //token
-export const TOKEN_ADDRESS = "0x49a7001ed779f67fb4048f27ed7cf435a4ffeada";
+export const TOKEN_ADDRESS = "0x4b94425f43B23571FC8fD27CD39a1091c94Bf76F";
 export const TOKEN_ABI = IVY.abi;
 
 //token sale
-export const TOKEN_SALE_ADDRESS = "0x366ae5379128a22CA4BD8eb0c64dC6B8A63e35f5";
+export const TOKEN_SALE_ADDRESS = "0xcAb04ef13004f828354D017c7A3E0BcB1DaA7A9b";
 export const TOKEN_SALE_ABI = TokenSale.abi;
