@@ -16,7 +16,6 @@ const TokenSale = () => {
   });
   const [error, setError] = useState(null);
   const [transactionStatus, setTransactionStatus] = useState(null);
-
   async function getPercentageSold() {
     try {
       // Check if contract is initialized
@@ -30,7 +29,7 @@ const TokenSale = () => {
       
       // Get current available tokens
       const availableTokens = await contract.getAvailableTokens();
-
+      
       // Check if initial amount is set
       if (initialAmount.toString() === '0') {
         console.log("Initial amount not set yet. Call setInitialTokenAmount() first.");
@@ -132,7 +131,7 @@ const TokenSale = () => {
       console.error("Error fetching contract data:", error);
       setError("Failed to fetch contract data. Please try again later.");
     }
-  };
+  }; 
 
   const checkContractState = async () => {
     try {
@@ -346,7 +345,7 @@ const TokenSale = () => {
                         {showPercentage}%
                       </div>
                       <span className="progress_label bg-white inline_style_1">
-                        <strong>{Math.trunc(tokenSale.tokensForSale / 28)} IVY</strong>
+                        <strong>25% IVY</strong>
                       </span>
                       {/* <span className="progress_label bg-white inline_style_2">
                       <strong>{tokenSale.tokenSaleBalance} IVY</strong>

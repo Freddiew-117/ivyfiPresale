@@ -13,5 +13,5 @@ export const TOKEN_ADDRESS = "0x4b94425f43B23571FC8fD27CD39a1091c94Bf76F";
 export const TOKEN_ABI = IVY.abi;
 
 //token sale
-export const TOKEN_SALE_ADDRESS = "0xcAb04ef13004f828354D017c7A3E0BcB1DaA7A9b";
+export const TOKEN_SALE_ADDRESS = "0x95A97258ebaD92D29D674bA79fb9B752AeAF42e2";
 export const TOKEN_SALE_ABI = TokenSale.abi;
