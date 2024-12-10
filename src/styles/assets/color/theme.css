@@ -95,13 +95,13 @@ header a:hover,
 
 .roadmap_box.current .roadmap_inner::before,
 .timeline_box.current .timeline_inner::before {
-    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #7C3AE7;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #8AE5CF;
 }
 
 .btn-default {
     color: white !important;
-    background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 51%, #7C3AE7);
-    background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 51%, #7C3AE7);
+    background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #7C3AE7 51%, #8AE5CF);
+    background-image: linear-gradient(to right, #7C3AE7 0%, #7C3AE7 51%, #8AE5CF);
 }
 
 .btn-default.active.focus,
@@ -115,8 +115,8 @@ header a:hover,
 .btn-default:focus,
 .btn.active:not(:disabled):not(.disabled),
 .btn:active:not(:disabled):not(.disabled) {
-    background-image: -webkit-linear-gradient(left, #8AE5CF 0%, #7C3AE7 51%, #8AE5CF);
-    background-image: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 51%, #8AE5CF);
+    background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 51%, #7C3AE7);
+    background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 51%, #7C3AE7);
 }
 
 .btn-border,
@@ -133,8 +133,8 @@ header a:hover,
 .doc_dropdown>a,
 .doc_dropdown>a:hover,
 .doc_dropdown .dropdown-menu {
-    background-image: -webkit-linear-gradient(left, #8AE5CF 0%, #7C3AE7 99%);
-    background-image: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 99%);
+    background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 99%);
+    background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 99%);
 }
 
 button,
@@ -142,18 +142,17 @@ button,
 .team_pop .progress-bar,
 .tk_counter_inner .progress-bar.gradient,
 .faq_content4 .card-header a::after {
-    background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 99%);
-    background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 99%);
+    background-image: -webkit-linear-gradient(left, #8AE5CF 0%, #7C3AE7 99%);
+    background-image: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 99%);
 }
 
 .gradient_box {
-    background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 99%) !important;
-    background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 99%) !important;
+    background-color: #7C3AE7 !important;
 }
 
 .team_social_s2 {
-    background-image: -webkit-linear-gradient(top, #7C3AE7 0%, #8AE5CF 99%);
-    background-image: linear-gradient(to bottom, #7C3AE7 0%, #8AE5CF 99%);
+    background-image: -webkit-linear-gradient(top, #8AE5CF 0%, #7C3AE7 99%);
+    background-image: linear-gradient(to bottom, #8AE5CF 0%, #7C3AE7 99%);
 }
 
 .dl_lan li a {

@@ -1,3 +1,2 @@
-# Hedera DApp with MetaMask, HashPack, and Blade Integration
-Presale page for IVYFi 
-a
+# Hedera Presale DApp with MetaMask, HashPack, and Blade Integration for IVYFi 
+

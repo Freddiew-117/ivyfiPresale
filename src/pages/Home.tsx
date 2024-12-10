@@ -52,7 +52,7 @@ export default function Home() {
         variant="h4"
         color="white"
       >
-        Let's buidl a dApp on Hedera
+        
       </Typography>
       {walletInterface !== null && (
         <>

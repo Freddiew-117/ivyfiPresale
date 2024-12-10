@@ -3,6 +3,7 @@ import { BsCurrencyBitcoin, BsArrowRight } from "react-icons/bs";
 import { FaEthereum } from "react-icons/fa";
 import { SiHedera } from "react-icons/si";
 import { AiOutlineCloudDownload } from "react-icons/ai";
+import Logo from "./../assets/logo.png";
 
   const Banner = ({ transferNativeToken }) => {
     return(
@@ -39,7 +40,8 @@ import { AiOutlineCloudDownload } from "react-icons/ai";
                 >
                   Whitepaper
                 </a>
-                <a href="#token" className="btn btn-border btn-radius">
+                <a href="#token"
+                className="btn btn-default btn-radius nav-link content-popup">
                   Buy Token Now!
                 </a>
                 
@@ -78,7 +80,6 @@ import { AiOutlineCloudDownload } from "react-icons/ai";
                         <div className="title_dark title_border">
                        <h4> Download Whitepaper</h4>
                        <p>
-                       Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
 
 
  
@@ -86,8 +87,6 @@ import { AiOutlineCloudDownload } from "react-icons/ai";
 
                        </p>
                        <a  href="#" className="btn btn-default btn-radius ">
-                        Download Now
-                        <AiOutlineCloudDownload />
                        </a>
 
                         </div>
@@ -111,7 +110,7 @@ import { AiOutlineCloudDownload } from "react-icons/ai";
              data-animation="fadeInRight"
              data-animation-delay="1.5s">
                <img
-               src="./../styles/assets/images/banner_img2.png"
+               src={Logo}
                alt="img"
                className="new_image_css"
                />

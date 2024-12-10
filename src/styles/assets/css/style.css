@@ -202,8 +202,8 @@ input {
 }
 
 button {
-  background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 99%);
-  background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 99%);
+  background-image: -webkit-linear-gradient(left, #8AE5CF 0%, #7C3AE7 99%);
+  background-image: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 99%);
   border: 0;
   border-radius: 40px;
   color: #ffffff;
@@ -345,7 +345,9 @@ button:focus {
 
 .bg_black_dark,
 .v_dark {
-  background-color: #0c0e27;
+  
+  background: -webkit-linear-gradient(left, #8AE5CF 0%, #7C3AE7 99%) !important;
+  background: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 99%) !important;
 }
 
 .blue_light_bg,
@@ -429,8 +431,7 @@ button:focus {
 }
 
 .gradient_box {
-  background: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 99%) !important;
-  background: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 99%) !important;
+  background-color: #7C3AE7 !important;
 }
 
 .gradient_box2 {
@@ -824,8 +825,8 @@ button:focus {
 }
 
 .default {
-  background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 99%);
-  background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 99%);
+  background-image: -webkit-linear-gradient(left, #8AE5CF 0%, #7C3AE7 99%);
+  background-image: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 99%);
 }
 
 .green {
@@ -956,11 +957,11 @@ button:focus {
 .btn:active:not(:disabled):not(.disabled) {
   background-image: -webkit-linear-gradient(
     left,
-    #7C3AE7 0%,
-    #8AE5CF 51%,
-    #7C3AE7
+    #8AE5CF 0%,
+    #7C3AE7 51%,
+    #8AE5CF
   );
-  background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 51%, #7C3AE7);
+  background-image: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 51%, #8AE5CF);
   box-shadow: none;
   outline: none;
 }
@@ -968,13 +969,7 @@ button:focus {
 .btn-default {
   color: white !important;
   background-size: 200% auto;
-  background-image: -webkit-linear-gradient(
-    left,
-    #7C3AE7 0%,
-    #8AE5CF 51%,
-    #7C3AE7
-  );
-  background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 51%, #7C3AE7);
+  background-color: #7C3AE7;
   border: 0;
   color: #fff;
   outline: none;
@@ -1005,19 +1000,19 @@ button:focus {
 .btn:active:not(:disabled):not(.disabled) {
   background-image: -webkit-linear-gradient(
     left,
-    #8AE5CF 0%,
-    #7C3AE7 51%,
-    #8AE5CF
+    #7C3AE7 0%,
+    #8AE5CF 51%,
+    #7C3AE7
   );
-  background-image: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 51%, #8AE5CF);
+  background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 51%, #7C3AE7);
   box-shadow: none;
   color: #fff;
   outline: none;
 }
 
 .btn-border {
-  background-image: -webkit-linear-gradient(left, #8AE5CF 0%, #7C3AE7 99%);
-  background-image: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 99%);
+  background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 99%);
+  background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 99%);
   border: 0;
   color: #fff;
   outline: none;
@@ -1071,8 +1066,8 @@ button:focus {
 .btn.btn-border:active,
 .btn.btn-border.focus:active,
 .btn.btn-border:focus {
-  background-image: -webkit-linear-gradient(left, #8AE5CF 0%, #7C3AE7 99%);
-  background-image: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 99%);
+  background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 99%);
+  background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 99%);
 }
 
 .btn i {
@@ -1904,8 +1899,8 @@ header a:hover,
 }
 
 .tk_counter_inner .progress-bar.gradient {
-  background: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 99%);
-  background: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 99%);
+  background: -webkit-linear-gradient(left, #8AE5CF 0%, #7C3AE7 99%);
+  background: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 99%);
 }
 
 .banner_rounded_bg {
@@ -2677,7 +2672,7 @@ header a:hover,
 }
 
 .video_wrap::before {
-  border: 3px solid #7C3AE7;
+  border: 3px solid #8AE5CF;
   border-radius: 10px;
   bottom: 30px;
   content: "";
@@ -3049,7 +3044,7 @@ header a:hover,
 }
 
 .chart_list_info li p span {
-  color: #8AE5CF;
+  color: #7C3AE7;
 }
 
 .token_info {
@@ -3801,7 +3796,7 @@ header a:hover,
 }
 
 .rd_complete .roadmap_icon {
-  background-color: #7C3AE7;
+  background-color: #8AE5CF;
 }
 
 .roadmap_icon::before {
@@ -3845,12 +3840,12 @@ header a:hover,
 
 .roadmap_box.current .roadmap_inner,
 .timeline_box.current .timeline_inner {
-  background-color: #7C3AE7;
+  background-color: #8AE5CF;
 }
 
 .roadmap_box.current .roadmap_inner::before,
 .timeline_box.current .timeline_inner::before {
-  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #7C3AE7;
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #8AE5CF;
   border-style: solid;
   border-width: 0 8px 8px;
   content: "";
@@ -3904,7 +3899,7 @@ header a:hover,
 
 .roadmap .owl-nav i:hover,
 .timeline .owl-nav i:hover {
-  background-color: #7C3AE7;
+  background-color: #8AE5CF;
   color: #fff;
 }
 
@@ -4039,7 +4034,7 @@ header a:hover,
 }
 
 .single_roadmap.roadmap_done .roadmap_icon {
-  background-color: #7C3AE7;
+  background-color: #8AE5CF;
 }
 
 .box_roadmap {
@@ -4083,7 +4078,7 @@ header a:hover,
 }
 
 .box_roadmap .roadmap_inner::after {
-  background-color: #7C3AE7;
+  background-color: #8AE5CF;
   border-radius: 100%;
   content: "";
   height: 10px;
@@ -4137,7 +4132,7 @@ header a:hover,
 }
 
 .roadmap_wrap .owl-nav i:hover {
-  color: #7C3AE7;
+  color: #8AE5CF;
 }
 
 .roadmap_wrap .owl-prev,
@@ -4334,9 +4329,9 @@ header a:hover,
 }
 
 .timeline_box.complete .timeline_circle::before {
-  border-color: #7C3AE7;
+  border-color: #8AE5CF;
   margin: -8px;
-  background-color: #7C3AE7;
+  background-color: #8AE5CF;
   z-index: -1;
 }
 
@@ -4345,7 +4340,7 @@ header a:hover,
   position: absolute;
   left: -50%;
   top: -30px;
-  background-color: #7C3AE7;
+  background-color: #8AE5CF;
   height: 5px;
   z-index: -2;
   width: 110%;
@@ -4585,8 +4580,8 @@ header a:hover,
 }
 
 .team_img.gradient_box::before {
-  background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 99%);
-  background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 99%);
+  background-image: -webkit-linear-gradient(left, #8AE5CF 0%, #7C3AE7 99%);
+  background-image: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 99%);
 }
 
 .team_img.rounded_img.gradient_box {
@@ -4651,7 +4646,7 @@ header a:hover,
 }
 
 .social_team a:hover {
-  color: #7C3AE7;
+  color: #8AE5CF;
 }
 
 .gradient_box .social_team a:hover {
@@ -4741,8 +4736,8 @@ header a:hover,
 }
 
 .team_pop .progress-bar {
-  background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 99%);
-  background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 99%);
+  background-image: -webkit-linear-gradient(left, #8AE5CF 0%, #7C3AE7 99%);
+  background-image: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 99%);
 }
 
 .team_wrap .team_info h4 a {
@@ -4799,8 +4794,8 @@ header a:hover,
 }
 
 .team_social_s2 {
-  background-image: -webkit-linear-gradient(top, #7C3AE7 0%, #8AE5CF 99%);
-  background-image: linear-gradient(to bottom, #7C3AE7 0%, #8AE5CF 99%);
+  background-image: -webkit-linear-gradient(top, #8AE5CF 0%, #7C3AE7 99%);
+  background-image: linear-gradient(to bottom, #8AE5CF 0%, #7C3AE7 99%);
   position: absolute;
   right: -15px;
   top: 50%;
@@ -5365,8 +5360,8 @@ header a:hover,
 }
 
 .faq_content4 .card-header a::after {
-  background-image: -webkit-linear-gradient(left, #7C3AE7 0%, #8AE5CF 99%);
-  background-image: linear-gradient(to right, #7C3AE7 0%, #8AE5CF 99%);
+  background-image: -webkit-linear-gradient(left, #8AE5CF 0%, #7C3AE7 99%);
+  background-image: linear-gradient(to right, #8AE5CF 0%, #7C3AE7 99%);
   border-radius: 100%;
   color: #ffffff;
   content: "\f208";
@@ -5628,7 +5623,7 @@ header a:hover,
 .v_light_blue_pro .nav-item a.active,
 .v_navy_blue .nav-item a:hover,
 .v_navy_blue .nav-item a.active {
-  color: #7C3AE7;
+  color: #8AE5CF;
 }
 
 .v_blue_pro .tab-link {
@@ -7026,7 +7021,7 @@ button.btn-white:hover {
 
 .v_dark .blog_text > a,
 .v_dark .blog_meta a i {
-  color: #8AE5CF;
+  color: #7C3AE7;
 }
 
 .v_dark .owl-theme .owl-dots .owl-dot span,
@@ -7568,7 +7563,7 @@ button.btn-white:hover {
 
 .dl_lan li a {
   background-color: #071890;
-  border-bottom: 2px solid #8AE5CF;
+  border-bottom: 2px solid #7C3AE7;
   color: #ffffff;
   display: block;
   font-size: 15px;
@@ -7888,7 +7883,7 @@ Animated Background
 
 .area{
   background: #2e0f60;  
-  background: -webkit-linear-gradient(to left, #8AE5CF, #2e0f60);  
+  background: -webkit-linear-gradient(to left, #7C3AE7, #2e0f60);  
   width: 100%;
   
  
