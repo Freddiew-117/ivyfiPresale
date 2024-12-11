@@ -35,8 +35,8 @@ export default function NavBar() {
             sx={{
               ml: "15%",
               mr: "15%",
-              mt: "0.5em"
-
+              mt: "0.5em",
+              mb: "0.5em"
             }}
             onClick={handleConnect}
           >

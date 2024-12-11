@@ -2775,6 +2775,19 @@ header a:hover,
   filter: blur(5px);
 }
 
+.showMessage{
+  display: block !important;
+}
+
+.connectMessage{
+  display: none;
+  width: 20%;
+  margin: auto;
+  padding: 0.5em;
+  background-color: white;
+  border-radius: 2em;
+  
+}
 .tk_countdown_time {
   background-color: #5957cd;
   border-radius: 9px;

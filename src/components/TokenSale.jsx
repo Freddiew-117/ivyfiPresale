@@ -217,10 +217,14 @@ const TokenSale = () => {
 
   return (
     <section id="token"
-    className={`section_token token_sale bg_light_dark ${tokenSale.presaleActive ? '' : 'blurred'}`} data-z-index="1"
-      data-parallax="scroll"
+    className="section_token token_sale bg_light_dark data-z-index='1'"
+          data-parallax="scroll"
       data-image-src="assets/images/token_bg.png">
-      <div className="area">
+        <div    className={`connectMessage ${tokenSale.presaleActive ? '' : 'showMessage'}`} data-z-index="10"
+>
+        <h3>Please connect your wallet</h3>
+        </div>
+      <div className={`area ${tokenSale.presaleActive ? '' : 'blurred'}`}>
         <div className="container ">
           <ul className="circles">
             <li></li>
