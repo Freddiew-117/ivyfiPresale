@@ -25,19 +25,28 @@ export default function NavBar() {
   return (
     <AppBar position='relative'>
       <Toolbar>
-        <img src={HBARLogo} alt='An upper case H with a line through the top' className='hbarLogoImg' />
-        {/* <Typography variant="h6" color="white" pl={1} noWrap>
+        <div className="headerLogo">
+          <img src={HBARLogo} alt='An upper case H with a line through the top' className='hbarLogoImg' />
+          {/* <Typography variant="h6" color="white" pl={1} noWrap>
           IVY Finance
         </Typography> */}
-        <Button
-          variant='contained'
-          sx={{
-            ml: "auto"
-          }}
-          onClick={handleConnect}
-        >
-          {accountId ? `Connected: ${accountId}` : 'Connect Wallet'}
-        </Button>
+          <Button
+            variant='contained'
+            sx={{
+              ml: "15%",
+              mr: "15%",
+              mt: "0.5em"
+
+            }}
+            onClick={handleConnect}
+          >
+            {accountId
+              ? `Connected: ${accountId.length > 9
+                ? `${accountId.slice(0, 3)}...${accountId.slice(-3)}`
+                : accountId
+              }`
+              : 'Connect Wallet'}        </Button>
+        </div>
       </Toolbar>
       <WalletSelectionDialog open={open} setOpen={setOpen} onClose={() => setOpen(false)} />
     </AppBar>

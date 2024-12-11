@@ -217,8 +217,7 @@ const TokenSale = () => {
 
   return (
     <section id="token"
-      className="section_token token_sale
-    bg_light_dark" data-z-index="1"
+    className={`section_token token_sale bg_light_dark ${tokenSale.presaleActive ? '' : 'blurred'}`} data-z-index="1"
       data-parallax="scroll"
       data-image-src="assets/images/token_bg.png">
       <div className="area">

@@ -976,6 +976,7 @@ button:focus {
   text-transform: uppercase;
   z-index: 2;
   transition: all 0.5s ease 0s;
+  margin-bottom: 0.5em;
 }
 
 .btn-default:hover {
@@ -1679,7 +1680,6 @@ header a:hover,
 .section_banner {
   background-position: left bottom;
   background-size: cover;
-  padding: 200px 0 100px;
   position: relative;
   overflow: hidden;
 }
@@ -2769,6 +2769,10 @@ header a:hover,
 
 .section_token {
   position: relative;
+}
+
+.blurred{
+  filter: blur(5px);
 }
 
 .tk_countdown_time {

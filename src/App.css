@@ -147,3 +147,15 @@ code {
   width: 30px;
   height: auto;
 }
+
+.headerLogo{
+  width: 100%;
+}
+
+@media only screen and (min-width:600px){
+  .headerLogo{
+      display: flex;
+  }
+
+  
+}
