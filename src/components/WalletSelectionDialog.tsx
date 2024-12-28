@@ -2,6 +2,7 @@ import { Button, Dialog, Stack } from "@mui/material";
 import { connectToMetamask } from "../services/wallets/metamask/metamaskClient";
 import { openWalletConnectModal } from "../services/wallets/walletconnect/walletConnectClient";
 import MetamaskLogo from "../assets/metamask-logo.svg";
+import Disclaimer from "../assets/disclaimer.png";
 import WalletConnectLogo from "../assets/walletconnect-logo.svg";
 
 
@@ -17,6 +18,13 @@ export const WalletSelectionDialog = (props: WalletSelectionDialogProps) => {
   return (
     <Dialog onClose={onClose} open={open}>
       <Stack p={2} gap={1}>
+      <img
+            src={Disclaimer}
+            alt='disclaimer'
+            className='disclaimer'
+            style={{
+            }}
+          />
         <Button
           variant="contained"
           onClick={() => {

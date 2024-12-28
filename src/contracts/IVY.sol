@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 
-contract IVYFi is ERC20, Ownable, Pausable, ERC20Burnable {
+contract IVYFI is ERC20, Ownable, Pausable, ERC20Burnable {
     uint8 private _decimals;
     uint256 public maxSupply; 
 

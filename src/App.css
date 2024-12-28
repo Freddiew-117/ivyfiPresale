@@ -148,6 +148,15 @@ code {
   height: auto;
 }
 
+.disclaimer {
+  width: 100%;
+  height: auto;
+}
+
+.connectButton{
+ color: red;
+}
+
 .headerLogo{
   width: 100%;
 }

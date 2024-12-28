@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { useWalletInterface } from '../services/wallets/useWalletInterface';
 
+import MetamaskLogo from "../assets/metamask-logo.svg";
+import Disclaimer from "../assets/disclaimer.png";
+import WalletConnectLogo from "../assets/walletconnect-logo.svg";
+
 // You'll need to import your contract ABI and address
 import { TOKEN_SALE_ABI, TOKEN_SALE_ADDRESS } from "./../contexts/constants.js";
 
@@ -29,22 +33,22 @@ const TokenSale = () => {
 
       // Get initial amount
       const initialAmount = await contract.initialTokenAmount();
-      
+
       // Get current available tokens
       const availableTokens = await contract.getAvailableTokens();
-      
+
       // Check if initial amount is set
       if (initialAmount.toString() === '0') {
         console.log("Initial amount not set yet. Call setInitialTokenAmount() first.");
         return 0;
       }
-      
+
       // Calculate tokens sold
       const tokensSold = initialAmount.sub(availableTokens);
-      
+
       // Calculate percentage
       const percentageSold = (tokensSold.toNumber() / initialAmount.toNumber()) * 100;
-      
+
       return percentageSold;
     } catch (error) {
       console.error("Error calculating percentage sold:", error);
@@ -61,10 +65,10 @@ const TokenSale = () => {
           const signer = provider.getSigner();
           const tokenContract = new ethers.Contract(TOKEN_SALE_ADDRESS, TOKEN_SALE_ABI, signer);
           setContract(tokenContract);
-  
+
           // Initial fetch of contract data
           await fetchContractData(tokenContract);
-          
+
           // Safely get initial token amount
           try {
             const initialAmount = await tokenContract.initialTokenAmount();
@@ -72,7 +76,7 @@ const TokenSale = () => {
               ...prev,
               initialTokenAmount: initialAmount.toString()
             }));
-  
+
             // Calculate percentage sold only after contract is set
             console.log("A")
             const percentageSold = await calculatePercentageSold(tokenContract);
@@ -89,27 +93,27 @@ const TokenSale = () => {
         setError("Please install MetaMask!");
       }
     };
-  
+
     initContract();
   }, []);
-  
+
   // Separate function to calculate percentage sold
   const calculatePercentageSold = async (contract) => {
     if (!contract) return 0;
-  
+
     try {
       const initialAmount = await contract.initialTokenAmount();
       const availableTokens = await contract.getAvailableTokens();
-  
+
       if (initialAmount.toString() === '0') {
         console.log("Initial amount not set yet.");
         return 0;
       }
-      
+
       // Use BigNumber division to prevent overflow
       const tokensSold = initialAmount.sub(availableTokens);
       const percentageSold = tokensSold.mul(100).div(initialAmount).toNumber();
-      
+
       return percentageSold;
     } catch (error) {
       console.error("Error calculating percentage sold:", error);
@@ -134,7 +138,7 @@ const TokenSale = () => {
       console.error("Error fetching contract data:", error);
       setError("Failed to fetch contract data. Please try again later.");
     }
-  }; 
+  };
 
   const checkContractState = async () => {
     try {
@@ -154,80 +158,77 @@ const TokenSale = () => {
     setTransactionStatus(null);
 
     if (!contract) {
-        setError("Contract not initialized. Please try again.");
-        return;
+      setError("Contract not initialized. Please try again.");
+      return;
     }
 
     try {
-        // Check presale status and available tokens
-        const [presaleActive, availableTokens] = await Promise.all([
-            contract.presaleActive(),
-            contract.getAvailableTokens(),
-        ]);
+      // Check presale status and available tokens
+      const [presaleActive, availableTokens] = await Promise.all([
+        contract.presaleActive(),
+        contract.getAvailableTokens(),
+      ]);
 
-        if (!presaleActive) {
-            setError("Presale is not currently active.");
-            return;
-        }
+      if (!presaleActive) {
+        setError("Presale is not currently active.");
+        return;
+      }
 
-        if (availableTokens.lt(amount)) {
-            setError("Requested token amount exceeds available tokens.");
-            return;
-        }
+      if (availableTokens.lt(amount)) {
+        setError("Requested token amount exceeds available tokens.");
+        return;
+      }
 
-        // Calculate cost
-        const amountInWei = ethers.utils.parseUnits(amount.toString(), 18);
-        const cost = await contract.calculateCost(amountInWei);
-        const signer = contract.signer;
-        const balance = await signer.getBalance();
+      // Calculate cost
+      const amountInWei = ethers.utils.parseUnits(amount.toString(), 18);
+      const cost = await contract.calculateCost(amountInWei);
+      const signer = contract.signer;
+      const balance = await signer.getBalance();
 
-        console.log(`Cost: ${ethers.utils.formatEther(cost)}`);
-        console.log(`Balance: ${ethers.utils.formatEther(balance)}`);
+      console.log(`Cost: ${ethers.utils.formatEther(cost)}`);
+      console.log(`Balance: ${ethers.utils.formatEther(balance)}`);
 
-        if (balance.lt(cost)) {
-            setError("Insufficient balance to complete the transaction.");
-            return;
-        }
+      if (balance.lt(cost)) {
+        setError("Insufficient balance to complete the transaction.");
+        return;
+      }
 
-        // Estimate gas
-        const estimatedGas = await contract.estimateGas.buyTokens(amount, { value: cost });
+      // Estimate gas
+      const estimatedGas = await contract.estimateGas.buyTokens(amount, { value: cost });
 
-        setTransactionStatus("Sending transaction...");
-        const tx = await contract.buyTokens(amount, {
-            value: cost,
-            gasLimit: estimatedGas.add(10000), // Add buffer to avoid reversion
-        });
+      setTransactionStatus("Sending transaction...");
+      const tx = await contract.buyTokens(amount, {
+        value: cost,
+        gasLimit: estimatedGas.add(10000), // Add buffer to avoid reversion
+      });
 
-        setTransactionStatus("Transaction sent. Awaiting confirmation...");
-        const receipt = await tx.wait();
+      setTransactionStatus("Transaction sent. Awaiting confirmation...");
+      const receipt = await tx.wait();
 
-        if (receipt.status === 1) {
-            setTransactionStatus("Tokens purchased successfully!");
-            // Optionally refresh token balance
-            const tokenBalance = await contract.token.balanceOf(signer.getAddress());
-            console.log("Updated Token Balance:", ethers.utils.formatUnits(tokenBalance, 18));
-        } else {
-            setError("Transaction failed.");
-        }
+      if (receipt.status === 1) {
+        setTransactionStatus("Tokens purchased successfully!");
+        // Optionally refresh token balance
+        const tokenBalance = await contract.token.balanceOf(signer.getAddress());
+        console.log("Updated Token Balance:", ethers.utils.formatUnits(tokenBalance, 18));
+      } else {
+        setError("Transaction failed.");
+      }
     } catch (error) {
-        console.error("Error:", error);
-        const errorMessage = error.reason || error.message || "An unknown error occurred.";
-        setError(errorMessage);
+      console.error("Error:", error);
+      const errorMessage = error.reason || error.message || "An unknown error occurred.";
+      setError(errorMessage);
     }
-};
+  };
 
 
 
   return (
     <section id="token"
-    className="section_token token_sale bg_light_dark data-z-index='1'"
-          data-parallax="scroll"
+      className="section_token token_sale bg_light_dark data-z-index='1'"
+      data-parallax="scroll"
       data-image-src="assets/images/token_bg.png">
-        <div    className={`connectMessage ${accountId ? '' : 'showMessage'}`} data-z-index="10"
->
-        <h3>Please connect your wallet</h3>
-        </div>
-      <div className={`area ${accountId ? '' : 'blurred'}`}>
+
+      <div>
         <div className="container ">
           <ul className="circles">
             <li></li>
@@ -241,7 +242,28 @@ const TokenSale = () => {
             <li></li>
             <li></li>
           </ul>
+          <div className={`connectMessage ${accountId ? '' : 'showMessage'}`} data-z-index="10"
+            >
+               <img
+            src={WalletConnectLogo}
+            alt='walletconnect logo'
+            className='walletLogoImage'
+            style={{
+              marginLeft: '-6px'
+            }}
+          />
+              <h3 className="connectText">Please connect your wallet</h3>
+              <img
+            src={MetamaskLogo}
+            alt='metamask logo'
+            className='walletLogoImage'
+            style={{
+              padding: '4px 4px 4px 0px'
+            }}
+          />
+            </div>
           <div className="row">
+           
             <div className="col-lg-6 offset-lg-3 
         col-md-12 col-sm-12">
               <div className="title_default_light title_border text-center">
@@ -295,13 +317,13 @@ const TokenSale = () => {
                   className="animation"
                   data-animation="fadeInUp"
                   data-animation-delay="0.2s">
-                  Purchased Tokens
+                  Acceptable currency: 
                 </h6>
                 <p
                   className="animation"
                   data-animation="fadeInUp"
                   data-animation-delay="0.2s">
-                  { } IVY
+                  HBAR
                 </p>
               </div>
             </div>
@@ -414,13 +436,13 @@ const TokenSale = () => {
                   className="animation"
                   data-animation="fadeInUp"
                   data-animation-delay="0.2s">
-                  Acceptable currency:
+                  Transaction Status:
                 </h6>
                 <p
                   className="animation"
                   data-animation="fadeInUp"
                   data-animation-delay="0.2s">
-                  HBAR, status: {transactionStatus}
+                  {transactionStatus?transactionStatus:'STANDBY'}
                 </p>
               </div>
             </div>

@@ -31,10 +31,10 @@ export default function NavBar() {
           IVY Finance
         </Typography> */}
           <Button
-            variant='contained'
+            variant='contained'           
             sx={{
-              ml: "15%",
-              mr: "15%",
+              ml: "auto",
+              mr: "0",
               mt: "0.5em",
               mb: "0.5em"
             }}

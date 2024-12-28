@@ -19,8 +19,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <AllWalletsProvider>
         <CssBaseline />
-        <NavBar />        
-    <Banner transferNativeToken={transferNativeToken} />
+        <NavBar />
+        <Banner transferNativeToken={transferNativeToken} />
         <TokenSale
           buyToken={buyToken}
           tokenSold={tokenSale.tokenSold}

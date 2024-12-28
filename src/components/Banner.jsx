@@ -11,6 +11,7 @@ const Banner = ({ transferNativeToken }) => {
       className="section_banner bg_black_dark"
       data-zindex="1" data-parallax="scroll"
       data-image-src="assets/images/banner_bg2.png" >
+      <div className="bannerbar"> </div>
       <div className="banner_effect"> </div>
       <div className="container">
         <div className="row align-items-center">
@@ -20,25 +21,25 @@ const Banner = ({ transferNativeToken }) => {
                 data-animation="fadeInUp"
                 data-animation-delay="1.1s"
               >
-                <strong>IVY</strong> is the biggest advancement in DEFI for
-                <strong> Hedera</strong>
+                Welcome to <strong>IvyFi </strong> your revenue sharing platform on the
+                <strong> Hedera Network</strong>.
               </h1>
-              <h5 className="animation presale_txt text-white"
+              {/* <h5 className="animation presale_txt text-white"
                 data-animation="fadeInUp"
                 data-animation-delay="1.3s">
                 Token Presale is <mark className="gradient_box">
                   Live
                 </mark>
-              </h5>
+              </h5> */}
               <div className="btn_group pt-2 pb-3 animation"
                 data-animation="fadeInUp"
                 data-animation-delay="1.4s">
-                <a href="https://www.ivyfinance.io/"
+                {/* <a href="https://www.ivyfinance.io/"
                   className="btn btn-default btn-radius nav-link content-popup"
                   target="_blank"
                 >
                   Whitepaper
-                </a>
+                </a> */}
                 <a href="#token"
                   className="btn btn-default btn-radius nav-link content-popup">
                   Buy Token Now!
@@ -103,6 +104,7 @@ const Banner = ({ transferNativeToken }) => {
           </div>
         </div>
       </div>
+      <div className="bannerbar"> </div>
     </section>
   );
 };
